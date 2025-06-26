@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 0 20px;
+    position: relative;
+    overflow-x: hidden;
+  }
+  h1 {
+    text-align: center;
+  }
+  input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    font-size: 16px;
+  }
+  button {
+    padding: 9px 15px;
+    font-size: 16px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  li {
+    background: #f4f4f4;
+    margin: 8px 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  li button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  /* Formiguinha */
+  #ant {
+    position: fixed;
+    bottom: 20px;
+    left: -30px;
+    width: 20px;
+    height: 20px;
+    background: black;
+    border-radius: 50%;
+    animation: walk 3s linear forwards;
+    display: none;
+    z-index: 1000;
+  }
+  @keyframes walk {
+    0% {
+      left: -30px;
+    }
+    100% {
+      left: 100vw;
+    }
+  }
