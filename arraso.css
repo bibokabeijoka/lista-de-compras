@@ -1,62 +1,81 @@
 body {
-    font-family: Arial, sans-serif;
-    max-width: 400px;
-    margin: 40px auto;
-    padding: 0 20px;
-    position: relative;
-    overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #a1008c;
+}
+
+input {
+  padding: 10px;
+  width: 200px;
+  font-size: 16px;
+  border-radius: 10px;
+  border-color: darkmagenta;
+  background-color: rgb(243, 216, 234);
+}
+
+button {
+  padding: 10px 15px;
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f5d4ee;
+  color: rgb(151, 11, 140);
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #ff83ee;
+  transition: all 1s;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background-color: #f8e5f7;
+  margin: 5px auto;
+  padding: 10px;
+  border: 10px solid #ecabee;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+li button {
+  background-color: #f8c7ec;
+  margin-left: 10px;
+}
+
+li button:hover {
+  background-color: #5f024b;
+}
+
+.ant {
+  position: absolute;
+  font-size: 24px;
+  animation: climb 3s linear forwards;
+  left: 10px;
+}
+
+@keyframes climb {
+  0% {
+      bottom: 0;
+      opacity: 1;
   }
-  h1 {
-    text-align: center;
+  100% {
+      bottom: 100%;
+      opacity: 0;
   }
-  input[type="text"] {
-    width: 70%;
-    padding: 8px;
-    font-size: 16px;
-  }
-  button {
-    padding: 9px 15px;
-    font-size: 16px;
-    margin-left: 5px;
-    cursor: pointer;
-  }
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  li {
-    background: #f4f4f4;
-    margin: 8px 0;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  li button {
-    background: #e74c3c;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  /* Formiguinha */
-  #ant {
-    position: fixed;
-    bottom: 20px;
-    left: -30px;
-    width: 20px;
-    height: 20px;
-    background: black;
-    border-radius: 50%;
-    animation: walk 3s linear forwards;
-    display: none;
-    z-index: 1000;
-  }
-  @keyframes walk {
-    0% {
-      left: -30px;
-    }
-    100% {
-      left: 100vw;
-    }
-  }
+  
+}

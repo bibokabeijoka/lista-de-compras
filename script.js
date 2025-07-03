@@ -1,61 +1,51 @@
-let items = JSON.parse(localStorage.getItem('shoppingList')) || [];
-
-const listElement = document.getElementById('shoppingList');
-const inputElement = document.getElementById('itemInput');
-const ant = document.getElementById('ant');
-
-function renderList() {
-  listElement.innerHTML = '';
-
-  items.forEach((item, index) => {
-    const li = document.createElement('li');
-    li.textContent = item;
-
-    const removeBtn = document.createElement('button');
-    removeBtn.textContent = 'X';
-    removeBtn.onclick = () => {
-      removeItem(index);
-    };
-
-    li.appendChild(removeBtn);
-    listElement.appendChild(li);
-  });
-}
-
+// Função principal para adicionar item
 function addItem() {
-  const newItem = inputElement.value.trim();
-  if (newItem === '') {
-    alert('Por favor, digite um item.');
-    return;
+  const input = document.getElementById("itemInput");
+  const itemText = input.value.trim();
+
+  if (itemText !== "") {
+      const list = document.getElementById("shoppingList");
+
+      const li = document.createElement("li");
+      li.textContent = itemText;
+
+      const removeBtn = document.createElement("button");
+      removeBtn.textContent = "Remover";
+      removeBtn.onclick = () => li.remove();
+
+      li.appendChild(removeBtn);
+      list.appendChild(li);
+
+      input.value = "";
+
+      spawnAnt(); // chama a função da formiguinha
   }
-
-  items.push(newItem);
-  localStorage.setItem('shoppingList', JSON.stringify(items));
-  inputElement.value = '';
-  renderList();
-
-  // Mostra e anima a formiguinha
-  ant.style.display = 'block';
-  ant.style.animation = 'none'; // reset animation
-  ant.offsetHeight; // trigger reflow
-  ant.style.animation = 'walk 3s linear forwards';
-
-  // Esconde a formiguinha quando terminar a animação
-  ant.addEventListener('animationend', () => {
-    ant.style.display = 'none';
-  }, { once: true });
 }
 
-function removeItem(index) {
-  items.splice(index, 1);
-  localStorage.setItem('shoppingList', JSON.stringify(items));
-  renderList();
+// Cria e anima a formiguinha
+function spawnAnt() {
+  const ant = document.createElement("div");
+  ant.className = "ant";
+  ant.innerText = "🐜";
+
+  // posição horizontal aleatória
+  ant.style.left = Math.random() * 90 + "%";
+
+  document.body.appendChild(ant);
+
+  // remove após a animação
+  setTimeout(() => {
+      ant.remove();
+  }, 3000);
 }
 
-inputElement.addEventListener('keypress', function(event) {
-  if (event.key === 'Enter') {
-    addItem();
-  }
+// Evento para tecla Enter
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("itemInput");
+
+  input.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+          addItem();
+      }
+  });
 });
-
-renderList();
