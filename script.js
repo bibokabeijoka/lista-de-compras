@@ -22,6 +22,8 @@ function addItem() {
   }
 }
 
+
+
 // Cria e anima a formiguinha
 function spawnAnt() {
   const ant = document.createElement("div");
