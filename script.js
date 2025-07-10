@@ -21,6 +21,23 @@ function addItem() {
       spawnAnt(); // chama a função da formiguinha
   }
 }
+ 
+//contador
+let totalCliques = parseInt(localStorage.getItem('totalCliques')) || 0;
+const conta = getelementById("conta");
+conta.textContent = totalCliques;
+local/Storage.setItem('totalCliques',totalCliques);
+
+document.getelementByid('botaoclique').addeventListener('click', ()
+ {
+  totalCliques ++;
+  conta.tex
+});
+
+document.getElementByid('botaodesclique').addEventListener('click', funcmenos)
+function funcmenos() { 
+
+}
 
 
 

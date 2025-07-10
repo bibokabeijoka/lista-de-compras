@@ -8,6 +8,9 @@ body {
 h1 {
   color: #a1008c;
 }
+.form-control{
+  padding: 10px;
+}
 
 #itemInput{
   padding: 10px;
@@ -26,13 +29,24 @@ h1 {
   margin-left: 10px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #f5d4ee;
+  background-color: #eeb6e2;
   color: rgb(151, 11, 140);
   border: none;
   border-radius: 5px;
 }
+.botaoclique{
+  background-color: #f580db;
+  color: rgb(151, 11, 140);
+  border: none;
+  border-radius: 5px;
+}
+.botaoclique:hover{
+  background-color: #ff83ee;
+  transition: all 1s;
+  border: none;
+}
 
-button:hover {
+.btn:hover {
   background-color: #ff83ee;
   transition: all 1s;
 }

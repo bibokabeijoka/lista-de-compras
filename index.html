@@ -18,13 +18,9 @@
   <!-- Linha principal com input e botão lado a lado -->
   <div class="row mb-3 g-2 align-items-center">
     <div class="col-sm-9">
-      <input
-        type="text"
-        id="itemInput"
-        placeholder="complete a música"
-        class="form-control"
-      />
+      <input type="text" id="itemInput" placeholder="complete a música"class="form-control"/>
     </div>
+
     <div class="col-sm-3">
       <button onclick="addItem()" class="btn">Adicionar</button>
     </div>
@@ -36,32 +32,16 @@
       <ul id="shoppingList" class="list-group"></ul>
     </div>
   </div>
+<!--botao de click-->
+<div>
+  <div class="conta">0</div>
+    <button id="reset">resetar</button>
+    <button id="botaoclique" class="butto">clique</button>
+    <button id="botaodesclique" class="buta">tira clique</button>
+  </div>
 
   <div id="antContainer" class="mb-4"></div>
-
-  <!-- Formulário no final -->
-  <div class="row mt-5">
-    <div class="col-12">
-      <form id="dados">
-        <input
-          type="text"
-          id="endereco"
-          placeholder="seu endereço"
-          class="form-control"/>
-          <div><input
-            type="text"
-            id="numerocartao"
-            placeholder="numero do seu cartao"
-            class="form-control"/></div>
-            <div><input
-                type="text"
-                id="numerocartao"
-                placeholder="tres numerozinhos da parte de tras"
-                class="form-control"/></div>
-              
-      </form>
-    </div>
-  </div>
+  
 
   <script src="script.js"></script>
 </body>
